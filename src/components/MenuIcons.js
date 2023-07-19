@@ -1,11 +1,9 @@
 'use client'
 
-import {useState} from 'react'
 import CloseIcon from '@mui/icons-material/Close';
 import MenuIcon from '@mui/icons-material/Menu';
 
-const MenuIcons = ({menuRef}) => {
-    const [menuOpen,setMenuOpen] = useState(false);
+const MenuIcons = ({menuRef,menuOpen,setMenuOpen}) => {
     const handleOpenMenu = ()=>{
       menuRef.current.classList.remove("-left-full")
       menuRef.current.classList.add("left-0")
