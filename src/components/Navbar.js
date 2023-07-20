@@ -11,7 +11,7 @@ const Navbar = () => {
     const [menuOpen,setMenuOpen] = useState(false);
     const menuRef = useRef(null);
   return (
-    <div className="h-16  w-screen shadow-md shadow-blue-500 dark:shadow-slate-200 fixed flex justify-between">
+    <div className="h-16  w-screen z-50 shadow-md shadow-blue-500 dark:shadow-slate-200 fixed flex justify-between bg-white dark:bg-gradient-to-l dark:from-slate-950 dark:to-blue-950">
         <div className="flex felx-row">
 
             <div className="ml-3 my-2 md:hidden mr-11">
