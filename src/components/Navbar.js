@@ -18,12 +18,12 @@ const Navbar = () => {
                 <MenuIcons menuRef={menuRef} menuOpen={menuOpen} setMenuOpen={setMenuOpen}/>
             </div>
         
-            <h1 className="text-gray-400 text-5xl md:ml-3 md:my-1 md:text-5xl font-extrabold"><span className="text-blue-500">O</span>ne<span className='text-blue-500'>TT</span></h1>
+            <h1 className="text-gray-400 text-5xl md:ml-3 md:my-1 md:text-5xl font-extrabold "><span className="text-blue-500 dark:text-white">O</span>ne<span className='text-blue-500 dark:text-white'>TT</span></h1>
         </div>
         <Menu menuRef={menuRef} setMenuOpen={setMenuOpen}/>
       <div className="flex flex-row my-2">
         <Theme/>
-        <div><AccountCircleIcon className="dark:text-blue-300 text-5xl text-gray-400 mr-3"/></div>
+        <div><AccountCircleIcon className="dark:text-white text-5xl text-gray-400 mr-3"/></div>
       </div>
       
     </div>

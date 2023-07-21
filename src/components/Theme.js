@@ -31,7 +31,7 @@ const Theme = () => {
     <div className='hover:cursor-pointer'>
       {
             darkMode?
-            <div onClick={handleLightMode}><LightModeIcon className="text-4xl text-blue-400 mt-2 mr-4"/></div>:
+            <div onClick={handleLightMode}><LightModeIcon className="text-4xl text-white mt-2 mr-4"/></div>:
             <div onClick={handleDarkMode}><DarkModeIcon className="text-4xl text-gray-400 mt-2 mr-4"/></div>
         }
     </div>
