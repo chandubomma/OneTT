@@ -1,21 +1,22 @@
 'use client'
 import React, { useRef, useState } from 'react';
+import SWiper from 'swiper'
 import {Swiper,SwiperSlide} from "swiper/react";
-import {Autoplay,Pagination} from 'swiper/modules';
+import {Autoplay,Pagination } from 'swiper/modules';
 import HomeSwiperSlide from "./HomeSwiperSlide";
 import 'swiper/css';
 import 'swiper/css/pagination';
-//import '../../public/swiperStyles.css';
+
+
 
 
 const HomeSwiper = ({popularMovies}) => {
-    
   return (
     <Swiper
         centeredSlides={true}
         autoplay={{
             delay:2500,
-            disableOnInteraction:false
+            disableOnInteraction:true
         }}
         loop={true}
         pagination={{
