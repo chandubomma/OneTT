@@ -14,7 +14,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className="bg-white dark:bg-gradient-to-l dark:from-slate-950 dark:to-blue-950 h-screen w-screen no-scrollbar">
         <Navbar/>
-        <div className="pt-16">
+        <div className="pt-16 h-screen">
           {children}
         </div>
        

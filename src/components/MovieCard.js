@@ -24,7 +24,7 @@ const MovieCard = ({movie}) => {
             />
 
         </div>
-        <h2 className='text-blue-500 mt-2 font-medium dark:text-white'>{movie.title}</h2>
+        <h2 className='text-blue-500 mt-2 font-medium dark:text-white w-full flex justify-center'>{movie.title}</h2>
       
     </div>
   )

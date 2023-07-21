@@ -20,8 +20,8 @@ const MenuIcons = ({menuRef,menuOpen,setMenuOpen}) => {
     <div >
       {
         menuOpen?
-        <div onClick={handleCloseMenu}><CloseIcon color="primary" sx={{fontSize:40}}/></div>:
-        <div onClick={handleOpenMenu}><MenuIcon color="primary" sx={{fontSize:40}}/></div>
+        <div onClick={handleCloseMenu}><CloseIcon color="primary" className='dark:text-white' sx={{fontSize:40}}/></div>:
+        <div onClick={handleOpenMenu}><MenuIcon color="primary" className='dark:text-white' sx={{fontSize:40}}/></div>
       }
     </div>
   )
