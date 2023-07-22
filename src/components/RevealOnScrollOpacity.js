@@ -2,7 +2,7 @@
 
 import { useState, useRef, useEffect } from "react";
 
-const ReavealOnScroll = ({children}) => {
+const RevealOnScrollOpacity = ({children}) => {
 
     const [isIntersecting, setIsIntersecting] = useState(false);
     const myref = useRef(null);
@@ -13,7 +13,7 @@ const ReavealOnScroll = ({children}) => {
       ([entry]) => {
         setIsIntersecting(entry.isIntersecting);
       },
-      { rootMargin: "-300px" }
+      { rootMargin: "-100px" }
     );
     observer.observe(myref.current);
 
@@ -22,24 +22,26 @@ const ReavealOnScroll = ({children}) => {
 
   useEffect(() => {
     if (isIntersecting) {
-      myref2.current.classList.remove(`md:-right-full`);
-      myref2.current.classList.add(`md:right-60`);
+      myref2.current.classList.remove(`opacity-0`);
+      myref2.current.classList.add(`opacity-100`);
+     
       
     } else {
-        myref2.current.classList.add(`md:-right-full`);
-        myref2.current.classList.remove(`md:right-60`);
+        myref2.current.classList.add(`opacity-0`);
+        myref2.current.classList.remove(`opacity-100`);
+        
     }
   }, [isIntersecting]);
 
 
 
   return (
-    <div ref={myref} className='w-full relative flex justify-center' style={{height:"400px"}}>
-        <div ref={myref2} className={`absolute  md:-right-full delay-500  duration-[1500ms] ease-in-out`}>
+    <div ref={myref} className='w-full' style={{height:"400px"}}>
+        <div ref={myref2} className={`opacity-0  delay-500 duration-[1500ms] ease-in-out`}>
             {children}
         </div>
     </div>
   )
 }
 
-export default ReavealOnScroll
+export default RevealOnScrollOpacity

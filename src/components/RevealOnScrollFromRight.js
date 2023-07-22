@@ -2,7 +2,7 @@
 
 import { useState, useRef, useEffect } from "react";
 
-const ReavealOnScrollFromLeft = ({children}) => {
+const ReavealOnScroll = ({children}) => {
 
     const [isIntersecting, setIsIntersecting] = useState(false);
     const myref = useRef(null);
@@ -22,26 +22,23 @@ const ReavealOnScrollFromLeft = ({children}) => {
 
   useEffect(() => {
     if (isIntersecting) {
-      myref2.current.classList.remove(`md:-left-full`);
-      myref2.current.classList.add(`md:left-32`);
-     
-      
+      myref2.current.classList.remove(`md:-right-full`);
+      myref2.current.classList.add(`md:right-60`);
     } else {
-        myref2.current.classList.add(`md:-left-full`);
-        myref2.current.classList.remove(`md:left-32`);
-        
+        myref2.current.classList.add(`md:-right-full`);
+        myref2.current.classList.remove(`md:right-60`);
     }
   }, [isIntersecting]);
 
 
 
   return (
-    <div ref={myref} className='w-full relative' style={{height:"400px"}}>
-        <div ref={myref2} className={`absolute  md:-left-full left-5  duration-[1500ms] ease-in-out`}>
+    <div ref={myref} className='w-full relative flex justify-center' style={{height:"400px"}}>
+        <div ref={myref2} className={`absolute text-sm md:-right-full delay-500 dark:delay-0 duration-[1200ms] dark:duration-[1500ms] ease-in-out`}>
             {children}
         </div>
     </div>
   )
 }
 
-export default ReavealOnScrollFromLeft
+export default ReavealOnScroll

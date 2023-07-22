@@ -13,15 +13,15 @@ const Menu = ({menuRef,setMenuOpen}) => {
                                   bg-gradient-to-r from-blue-400 to-slate-100 dark:bg-gradient-to-l dark:from-slate-950 dark:to-blue-400  h-screen md:h-auto 
                                   md:bg-none dark:md:bg-none pt-48 md:pt-0 ">
 
-            <div onClick={handleClick} className="w-screen py-3 md:px-3 md:w-auto hover:bg-blue-800 hover:text-white">
+            <div onClick={handleClick} className="w-screen py-3 md:px-3 md:w-auto hover:bg-blue-500 dark:hover:bg-blue-800 hover:text-white">
                 <Link href="/">Home</Link>
             </div>
 
-            <div onClick={handleClick} className="w-screen py-3 md:px-3  md:w-auto hover:bg-blue-800 hover:text-white">
+            <div onClick={handleClick} className="w-screen py-3 md:px-3  md:w-auto hover:bg-blue-500 dark:hover:bg-blue-800 hover:text-white">
                 <Link href="/explore">Explore</Link>
             </div>
 
-            <div onClick={handleClick} className="w-screen py-3 md:px-3  md:w-auto hover:bg-blue-800  hover:text-white">
+            <div onClick={handleClick} className="w-screen py-3 md:px-3  md:w-auto hover:bg-blue-500 dark:hover:bg-blue-800  hover:text-white">
                 <Link href="/settings">Settings</Link>
             </div>
 
