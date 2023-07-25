@@ -1,9 +1,10 @@
 import React from 'react'
+import SearchBar from '@/components/SearchBar'
 
 const Explore = () => {
   return (
     <div>
-      <h1>Explore</h1>
+      <SearchBar/>
     </div>
   )
 }

@@ -34,7 +34,7 @@ export default async function Home() {
       </div>
       <div className="w-screen relative flex flex-col md:flex-row justify-center md:h-full h-96" >
         <div className="md:w-1/2 w-full min-h-60 hidden md:inline-block dark:md:hidden pl-28">
-            <RevealOnScrollOpacity direction='right'>
+            <RevealOnScrollOpacity>
                 <Image
                   src="/onett_image1.jpg"
                   alt="Picture"
@@ -45,7 +45,7 @@ export default async function Home() {
             </RevealOnScrollOpacity>
         </div>
        
-        <div className="md:w-1/2 w-screen dark:w-screen min-h-60 flex items-center text-center  md:dark:pl-40 justify-center  pt-32 md:pt-10 ">
+        <div className="md:w-1/2 w-screen dark:w-screen min-h-60 flex items-center text-center overflow-x-hidden md:dark:pl-40 justify-center  pt-32 md:pt-10 ">
           <RevealOnScrollFromRight>
 
             <div className="flex items-center  justify-center md:dark:w-screen md:dark:pl-96">
