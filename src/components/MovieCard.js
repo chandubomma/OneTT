@@ -19,7 +19,6 @@ const MovieCard = ({movie}) => {
                 width={600}
                 height={400}
                 className="md:h-56 md:w-40 h-48 w-40 rounded-lg shadow hover:shadow-xl hover:cursor-pointer hover:scale-105  duration-300 ease-out"
-                
             />
 
         </div>

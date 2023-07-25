@@ -15,7 +15,7 @@ const HomeSwiper = ({popularMovies}) => {
         centeredSlides={true}
         autoplay={{
             delay:2500,
-            disableOnInteraction:true
+            disableOnInteraction:false
         }}
         loop={true}
         pagination={{
