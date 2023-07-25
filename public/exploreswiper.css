@@ -9,7 +9,7 @@
     width: 25px;
     height: 25px;
     overflow: hidden;
-    @apply md:right-[38rem]
+    @apply md:right-[38rem] dark:text-white
 }
 
 .swiper-button-prev{
@@ -18,5 +18,5 @@
     width: 25px;
     height: 25px;
     overflow: hidden;
-    @apply md:left-[38rem]
+    @apply md:left-[38rem] dark:text-white
 }

@@ -33,7 +33,7 @@ const ReavealOnScroll = ({children}) => {
 
 
   return (
-    <div ref={myref} className='w-full relative flex justify-center' style={{height:"400px"}}>
+    <div ref={myref} className='w-full relative flex justify-center h-fit min-h-[22rem] overflow-hidden'>
         <div ref={myref2} className={`absolute text-sm md:-right-full  delay-500 dark:delay-0 duration-[1200ms] dark:duration-[1500ms] ease-in-out`}>
             {children}
         </div>

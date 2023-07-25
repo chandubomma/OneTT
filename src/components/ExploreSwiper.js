@@ -6,7 +6,7 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import '../../public/exploreswiper.css'
 import ExploreMovieSlide from './ExploreMovieSlide';
-
+import ExploreTvShowSlide from './ExploreTvShowSlide';
 
 
 
@@ -21,7 +21,7 @@ const ExploreSwiper = ({genres}) => {
         
     >
         <SwiperSlide key={1}><ExploreMovieSlide genres={genres}/></SwiperSlide>
-        <SwiperSlide key={2}>Tv Shows</SwiperSlide>
+        <SwiperSlide key={2}><ExploreTvShowSlide genres={genres}/></SwiperSlide>
 
     </Swiper>
   )

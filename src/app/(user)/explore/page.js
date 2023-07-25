@@ -81,10 +81,11 @@ const Explore = async() => {
         "id": 37,
         "name": "Western"
       }
-    ]
-  
+    
+  ]
   for(let i=0;i<genres.length;i++){
     genres[i].movies = await getMoviesByGenre(genres[i].id)
+    genres[i].shows = await getTvShowsByGenre(genres[i].id)
   }
   return (
     <div>
@@ -101,4 +102,11 @@ async function getMoviesByGenre(id){
   if(!res.ok)throw new Error('Failed to fetch  movies');
   const response = await res.json();
   return response.results.reverse();
+}
+
+async function getTvShowsByGenre(id){
+  const res = await fetch(`https://api.themoviedb.org/3/discover/tv?api_key=${process.env.TMDB_API_KEY}&with_genres=${id}`);
+  if(!res.ok)throw new Error('Failed to fetch  tv shows');
+  const response = await res.json();
+  return response.results;
 }

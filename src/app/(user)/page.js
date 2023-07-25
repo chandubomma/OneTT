@@ -14,6 +14,8 @@ export default async function Home() {
   var topRatedMovies = await  getTopRatedMovies();
   var upcomingMovies = await getUpcomingMovies();
   var nowPlayingMovies = await getNowPlayingMovies();
+  var popularTvShows = await getPopularTvShows();;
+  var topRatedTvShows = await  getTopRatedTvShows();
 
   return (
     <>
@@ -32,7 +34,15 @@ export default async function Home() {
         <h1 className="text-blue-500 dark:text-white font-bold text-2xl mb-4 pl-5">Top Rated Movies</h1>
         <MovieListSwiper MovieList={topRatedMovies} />
       </div>
-      <div className="w-screen relative flex flex-col md:flex-row justify-center md:h-full h-96" >
+      <div className="pt-4 dark:shadow-inner">
+        <h1 className="text-blue-500 dark:text-white font-bold text-2xl mb-4 pl-5">Popular TV Shows</h1>
+        <MovieListSwiper MovieList={popularTvShows} />
+      </div>
+      <div className="pt-4 dark:shadow-inner">
+        <h1 className="text-blue-500 dark:text-white font-bold text-2xl mb-4 pl-5">Top Rated Shows</h1>
+        <MovieListSwiper MovieList={topRatedTvShows} />
+      </div>
+      <div className="w-screen relative flex flex-col md:flex-row justify-center md:h-full h-fit mt-10" >
         <div className="md:w-1/2 w-full min-h-60 hidden md:inline-block dark:md:hidden pl-28">
             <RevealOnScrollOpacity>
                 <Image
@@ -45,7 +55,7 @@ export default async function Home() {
             </RevealOnScrollOpacity>
         </div>
        
-        <div className="md:w-1/2 w-screen dark:w-screen min-h-60 flex items-center text-center overflow-x-hidden md:dark:pl-40 justify-center  pt-32 md:pt-10 ">
+        <div className="md:w-1/2 w-screen dark:w-screen md:min-h-60 h-fit flex items-center text-center overflow-x-hidden md:dark:pl-40 justify-center  pt-32">
           <RevealOnScrollFromRight>
 
             <div className="flex items-center  justify-center md:dark:w-screen md:dark:pl-96">
@@ -119,6 +129,20 @@ async function getUpcomingMovies(){
 async function getNowPlayingMovies(){
   const res = await fetch(`https://api.themoviedb.org/3/movie/now_playing?api_key=${process.env.TMDB_API_KEY}`);
   if(!res.ok)throw new Error('Failed to fetch now playing movies');
+  const response = await res.json();
+  return response.results;
+}
+
+async function getPopularTvShows(){
+  const res = await fetch(`https://api.themoviedb.org/3/tv/popular?api_key=${process.env.TMDB_API_KEY}`);
+  if(!res.ok)throw new Error('Failed to fetch popular tv shows');
+  const response = await res.json();
+  return response.results;
+}
+
+async function getTopRatedTvShows(){
+  const res = await fetch(`https://api.themoviedb.org/3/tv/top_rated?api_key=${process.env.TMDB_API_KEY}`);
+  if(!res.ok)throw new Error('Failed to fetch popular tv shows');
   const response = await res.json();
   return response.results;
 }
