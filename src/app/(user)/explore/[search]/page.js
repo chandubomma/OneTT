@@ -1,4 +1,5 @@
 import ShowSearchResluts from "@/components/ShowSearchResluts";
+import NoSearchResults from "@/components/NoSearchResults";
 
 const Search = async ({params}) => {
     const searchResults = await searchQuery(params.search);
@@ -8,11 +9,11 @@ const Search = async ({params}) => {
         {
             searchResults.length>0?
             <div>
-              <h2 className="text-2xl md:w-2/3 m-auto text-blue-500 font-semibold mb-4 text-start pl-2 dark:text-white">Search results for {params.search} :</h2>
+              <h2 className="text-2xl md:w-2/3 m-auto text-blue-500 font-bold mb-4 text-start pl-2 dark:text-white">Search results for {params.search} :</h2>
               <ShowSearchResluts searchResults={searchResults}/>
             </div>
             :
-            'No Results found'
+            <NoSearchResults query={params.search}/>
         }
     </div>
   )

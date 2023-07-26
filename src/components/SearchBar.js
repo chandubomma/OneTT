@@ -16,7 +16,7 @@ const SearchBar = ({searchHandler}) => {
   return (
     <div className='w-screen h-96 bg-gradient-to-b from-blue-400 to-white dark:bg-none
                     flex flex-col justify-center items-center'>
-        <h1 className='md:text-2xl text-md mb-8 font-semibold text-blue-500 dark:text-white'>Search for movies, tv shows, many more...</h1>  
+        <h1 className='md:text-2xl text-lg mb-8 font-bold text-blue-500 dark:text-white'>Search for movies, tv shows, many more...</h1>  
         <div className='w-fit h-fit flex justify-center relative'>
             <SearchIcon className='absolute left-4 top-4 text-2xl text-gray-500 dark:text-gray-400'/>
             <MicIcon className='absolute right-4 top-4 text-2xl text-gray-500 dark:text-gray-400'/>
