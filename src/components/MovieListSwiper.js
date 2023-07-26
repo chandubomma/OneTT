@@ -23,17 +23,17 @@ const MovieListSwiper = ({MovieList}) => {
                 slidesPerView: 5,
             },
             900:{
-                slidesPerView: 7,
+                slidesPerView: 6,
             },
             1000:{
-                slidesPerView: 9,
+                slidesPerView: 7,
             }
           }}
 
           className='dark:bg-gradient-to-l dark:from-slate-900 dark:to-blue-900'
     >
        { MovieList.map(movie => (
-            <SwiperSlide key={movie.id} className='md:ml-4 ml-2 mt-2 mb-4'><MovieCard movie={movie}/></SwiperSlide>
+            <SwiperSlide key={movie.id} className='md:ml-4 mt-2 mb-4 mx-1 ml-1'><MovieCard movie={movie}/></SwiperSlide>
        ))}
     </Swiper>
   )

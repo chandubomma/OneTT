@@ -1,4 +1,5 @@
 import MovieListSwiper from './MovieListSwiper';
+import Link from 'next/link';
 
 export default function ExploreMovieSlide({genres}) {
 
@@ -9,12 +10,16 @@ export default function ExploreMovieSlide({genres}) {
         
         {genres.map(genre=> (
             <div key={genre.id} className="pt-3 dark:shadow-inner">
-                <h1 className="text-blue-500 dark:text-white font-bold text-2xl mb-4 pl-5">{genre.name}</h1>
+                <div className='flex flex-row justify-between'>
+                    <h1 className="text-blue-500 dark:text-white font-bold text-2xl mb-4 pl-5">{genre.name}</h1>
+                    <Link href="#" className='pr-6 text-blue-400'>view all</Link>
+                </div>
+                
                 <MovieListSwiper MovieList={genre.movies} />
              </div>
         ))}
        
-
+ 
     </div>
   )
 }

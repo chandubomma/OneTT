@@ -1,5 +1,3 @@
-import React from 'react'
-import SearchBar from '@/components/SearchBar';
 import ExploreSwiper from '@/components/ExploreSwiper';
 
 const Explore = async() => {
@@ -89,7 +87,6 @@ const Explore = async() => {
   }
   return (
     <div>
-      <SearchBar/>
       <ExploreSwiper genres={genres}/>
     </div>
   )
