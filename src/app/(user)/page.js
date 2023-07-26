@@ -107,23 +107,32 @@ export default async function Home() {
 
 async function getPopularMovies(){
   const res = await fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${process.env.TMDB_API_KEY}`);
+  const res2 = await fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${process.env.TMDB_API_KEY}&with_original_language=hi|kn|ml|ta|te&primary_release_date.gte=2015-01-01`);
   if(!res.ok)throw new Error('Failed to fetch popular movies');
+  if(!res2.ok)throw new Error('Failed to fetch popular movies');
   const response = await res.json();
-  return response.results.slice(0,12);
+  const response2 = await res2.json();
+  return response.results.sort(() => Math.random() - 0.5).slice(0,6).concat(response2.results.sort(() => Math.random() - 0.5).slice(0,6)).sort(() => Math.random() - 0.5);
 }
 
 async function getTopRatedMovies(){
   const res = await fetch(`https://api.themoviedb.org/3/movie/top_rated?api_key=${process.env.TMDB_API_KEY}`);
   if(!res.ok)throw new Error('Failed to fetch top rated movies');
   const response = await res.json();
-  return response.results;
+  const res2 = await fetch(`https://api.themoviedb.org/3/movie/top_rated?api_key=${process.env.TMDB_API_KEY}&with_original_language=hi|kn|ml|ta|te&primary_release_date.gte=2010-01-01`);
+  if(!res2.ok)throw new Error('Failed to fetch top rated movies');
+  const response2 = await res2.json();
+  return response.results.slice(0,12).concat(response2.results.slice(0,12)).sort(() => Math.random() - 0.5);
 }
 
 async function getUpcomingMovies(){
   const res = await fetch(`https://api.themoviedb.org/3/movie/upcoming?api_key=${process.env.TMDB_API_KEY}`);
   if(!res.ok)throw new Error('Failed to fetch upcoming movies');
   const response = await res.json();
-  return response.results;
+  const res2 = await fetch(`https://api.themoviedb.org/3/movie/upcoming?api_key=${process.env.TMDB_API_KEY}&with_original_language=hi|kn|ml|ta|te&primary_release_date.gte=2010-01-01`);
+  if(!res2.ok)throw new Error('Failed to fetch upcoming movies');
+  const response2 = await res2.json();
+  return response.results.slice(0,12).concat(response2.results.slice(0,12)).sort(() => Math.random() - 0.5);
 }
 
 async function getNowPlayingMovies(){

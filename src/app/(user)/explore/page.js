@@ -98,12 +98,18 @@ async function getMoviesByGenre(id){
   const res = await fetch(`https://api.themoviedb.org/3/discover/movie?api_key=${process.env.TMDB_API_KEY}&with_genres=${id}`);
   if(!res.ok)throw new Error('Failed to fetch  movies');
   const response = await res.json();
-  return response.results.reverse();
+  const res2 = await fetch(`https://api.themoviedb.org/3/discover/movie?api_key=${process.env.TMDB_API_KEY}&with_genres=${id}&with_original_language=hi|kn|ml|ta|te&primary_release_date.gte=2010-01-01`);
+  if(!res2.ok)throw new Error('Failed to fetch  movies');
+  const response2 = await res2.json();
+  return response.results.slice(0,12).concat(response2.results.slice(0,12)).sort(() => Math.random() - 0.5);
 }
 
 async function getTvShowsByGenre(id){
   const res = await fetch(`https://api.themoviedb.org/3/discover/tv?api_key=${process.env.TMDB_API_KEY}&with_genres=${id}`);
   if(!res.ok)throw new Error('Failed to fetch  tv shows');
   const response = await res.json();
-  return response.results;
+  const res2 = await fetch(`https://api.themoviedb.org/3/discover/tv?api_key=${process.env.TMDB_API_KEY}&with_genres=${id}&with_original_language=hi|kn|ml|ta|te&primary_release_date.gte=2010-01-01`);
+  if(!res2.ok)throw new Error('Failed to fetch  tv shows');
+  const response2 = await res2.json();
+  return response.results.slice(0,12).concat(response2.results.slice(0,12)).sort(() => Math.random() - 0.5);
 }

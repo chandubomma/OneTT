@@ -11,7 +11,7 @@ const HomeSwiperSlide = ({movie}) => {
     <div className="realative">
       <div className="absolute top-10 md:right-20 right-5">
         <div className=" text-white text-xl w-fit ml-1 bg-gradient-to-r from-blue-500 to-slate-500 shadow-md shadow-gray-500 font-semibold p-4 rounded-full">
-          <h1>{votePercent}%</h1>
+          <h1>{votePercent.toPrecision(2)}%</h1>
         </div>
         <h5 className="text-white font-bold text-mg mt-2">({movie.vote_count} votes)</h5>
       </div>
@@ -28,7 +28,7 @@ const HomeSwiperSlide = ({movie}) => {
       <Image
       src={imgUrl}
       alt="Picture of the movie"
-      width={1200}
+      width={1400}
       height={700}
       priority
       className="h-96 w-screen "
