@@ -7,8 +7,9 @@ const MovieCard = ({movie}) => {
     if(movie.poster_path)
     imgUrl="https://image.tmdb.org/t/p/original"+movie.poster_path;
     else if(movie.backdrop_path) imgUrl="https://image.tmdb.org/t/p/original"+movie.backdrop_path;
-    else return(<></>);
-    const votePercent = movie.vote_average*10;
+    else return(<div>Not Available</div>);
+    let votePercent = movie.vote_average*10;
+    if(votePercent>=100)votePercent=99;
     var path ;
     if(movie.title)path = `/movie_details/${movie.id}`;
     else path = `/show_details/${movie.id}`;

@@ -9,6 +9,7 @@ import MovieCard from './MovieCard';
 
 
 const MovieListSwiper = ({MovieList}) => {
+    MovieList = MovieList.filter((movie)=>(movie.poster_path || movie.backdrop_path))
   return (
     <Swiper
         

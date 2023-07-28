@@ -10,6 +10,7 @@ import 'swiper/css/pagination';
 
 
 const HomeSwiper = ({popularMovies}) => {
+  popularMovies = popularMovies.filter((movie)=>(movie.backdrop_path));
   return (
     <Swiper
         centeredSlides={true}
