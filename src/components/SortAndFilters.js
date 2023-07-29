@@ -17,10 +17,29 @@ const SortAndFilters = ({genres,
         
     }
 
-    const handleGenres = ()=>{
+    const handleGenres = (e)=>{
+        const active = ['bg-gradient-to-r','from-blue-600','to-gray-400','text-white'];
+        const notActive = ['bg-none','text-gray-500'];
+        if(e.target.value=='true'){
+            active.forEach(cls=>{
+                e.target.classList.remove(cls);
+            })
+            notActive.forEach(cls=>{
+                e.target.classList.add(cls);
+            })
+            e.target.value='false';
+        }else{
+            active.forEach(cls=>{
+                e.target.classList.add(cls);
+            })
+            notActive.forEach(cls=>{
+                e.target.classList.remove(cls);
+            })
+            e.target.value='true';
+        }
         setGenresFilter({
             ...genresFilter,
-            [e.val]:!genresFilter[e.val]
+            [e.target.name]:e.target.value
         })
     }
    
@@ -90,7 +109,7 @@ const SortAndFilters = ({genres,
                 <div className='flex flex-wrap w-full mt-3'>
                     {
                         genres.map(genre=>(
-                            <button key={genre.id} value={genre.name} onClick={(e)=>handleGenres(e)} className='border-2 p-2 px-4 text-gray-500 bg-none rounded-2xl mx-2 my-1 border-gray-400'>{genre.name}</button>
+                            <button key={genre.id} name={genre.id} defaultValue={'false'} onClick={(e)=>handleGenres(e)} className='border-2 p-2 px-4 text-gray-500 bg-none rounded-2xl mx-2 my-1 border-gray-400'>{genre.name}</button>
                         ))
                     }
                 </div>

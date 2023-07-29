@@ -11,9 +11,10 @@ const ShowSearchResluts = ({searchResults}) => {
     const [rating,setRating] = useState(0);
     const [runtime,setRuntime] = useState(0);
   var results = [...searchResults];
-  sortByHandler(sortBy,results);
   results=categoryHandler(category,results);
   results=languageHandler(language,results);
+  results=genresHandler(genresFilter,results);
+  sortByHandler(sortBy,results);
   return (
     <div className="flex md:flex-row flex-col">
       <div className="">
@@ -94,6 +95,28 @@ function languageHandler(language,results){
       })
     }
   })
+  return newResults;
+}
+
+function genresHandler(genresFilter,results){
+  if(Object.keys(genresFilter).length==0)return results;
+  const newResults=[];const map={};
+  Object.keys(genresFilter).forEach(genre=>{
+    if(genresFilter[genre]=='true'){
+      results.forEach(result=>{
+          result.genre_ids.forEach(gen=>{
+            if(gen==genre ){
+              if(map[result.id]!=true){
+                newResults.push(result);
+                map[result.id]=true;
+              }
+            }  
+          })
+      })
+      
+    }
+  })
+  if(newResults.length==0)return results;
   return newResults;
 }
 
