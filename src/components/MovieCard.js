@@ -10,6 +10,9 @@ const MovieCard = ({movie}) => {
     else return(<div>Not Available</div>);
     let votePercent = movie.vote_average*10;
     if(votePercent>=100)votePercent=99;
+    votePercent=votePercent.toPrecision(2);
+    if(votePercent==0)votePercent='NA';
+    else votePercent+='%'
     var path ;
     if(movie.title)path = `/movie_details/${movie.id}`;
     else path = `/show_details/${movie.id}`;
@@ -19,7 +22,7 @@ const MovieCard = ({movie}) => {
         <div className='pt-6 w-fit inline-block md:w-52'>
             <div className='relative '>
                 <div className="absolute -top-5 md:-top-6 left-1 md:left-3 z-30 text-white text-md md:text-lg w-fit ml-1 bg-gradient-to-r from-blue-500 to-slate-500 shadow-md shadow-gray-500 font-semibold p-2 rounded-full">
-                    <h1>{votePercent.toPrecision(2)}%</h1>
+                    <h1>{votePercent}</h1>
             </div>
 
                 <Image

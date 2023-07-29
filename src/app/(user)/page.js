@@ -4,6 +4,7 @@ import RevealOnScrollFromRight from "@/components/RevealOnScrollFromRight";
 import RevealOnScrollOpacity from "@/components/RevealOnScrollOpacity";
 import Image from "next/image";
 import Link from "next/link";
+import ArrowCircleRightIcon from '@mui/icons-material/ArrowCircleRight';
 
 export const revalidate = 86400;
 
@@ -23,23 +24,38 @@ export default async function Home() {
         <HomeSwiper popularMovies={popularMovies}/>
       </div>
       <div className="pt-6 dark:shadow-inner">
-        <h1 className="text-blue-500 dark:text-white font-bold text-2xl mb-4 pl-5">Upcoming Movies</h1>
+          <div className='flex flex-row justify-between'>
+            <h1 className="text-blue-500 dark:text-white font-bold text-2xl mb-4 pl-5">Upcoming Movies</h1>
+            <Link href={`/explore/genres/upcoming_movies/1`} className='pr-6 text-blue-400'>view all<ArrowCircleRightIcon className='text-4xl'/></Link>
+          </div>
         <MovieListSwiper MovieList={upcomingMovies} />
       </div>
       <div className="pt-3 dark:shadow-inner">
-        <h1 className="text-blue-500 dark:text-white font-bold text-2xl mb-4 pl-5">Now Playing Movies</h1>
+          <div className='flex flex-row justify-between'>
+            <h1 className="text-blue-500 dark:text-white font-bold text-2xl mb-4 pl-5">Now Playing Movies</h1>
+            <Link href={`/explore/genres/playing_now/1`} className='pr-6 text-blue-400'>view all<ArrowCircleRightIcon className='text-4xl'/></Link>
+          </div>
         <MovieListSwiper MovieList={nowPlayingMovies} />
       </div>
       <div className="pt-4 dark:shadow-inner">
-        <h1 className="text-blue-500 dark:text-white font-bold text-2xl mb-4 pl-5">Top Rated Movies</h1>
+          <div className='flex flex-row justify-between'>
+            <h1 className="text-blue-500 dark:text-white font-bold text-2xl mb-4 pl-5">Top Rated Movies</h1>
+            <Link href={`/explore/genres/top_rated_movies/1`} className='pr-6 text-blue-400'>view all<ArrowCircleRightIcon className='text-4xl'/></Link>
+          </div>
         <MovieListSwiper MovieList={topRatedMovies} />
       </div>
       <div className="pt-4 dark:shadow-inner">
-        <h1 className="text-blue-500 dark:text-white font-bold text-2xl mb-4 pl-5">Popular TV Shows</h1>
+          <div className='flex flex-row justify-between'>
+            <h1 className="text-blue-500 dark:text-white font-bold text-2xl mb-4 pl-5">Popular TV Shows</h1>
+            <Link href={`/explore/genres/popular_shows/1`} className='pr-6 text-blue-400'>view all<ArrowCircleRightIcon className='text-4xl'/></Link>
+          </div>
         <MovieListSwiper MovieList={popularTvShows} />
       </div>
       <div className="pt-4 dark:shadow-inner">
-        <h1 className="text-blue-500 dark:text-white font-bold text-2xl mb-4 pl-5">Top Rated Shows</h1>
+          <div className='flex flex-row justify-between'>
+            <h1 className="text-blue-500 dark:text-white font-bold text-2xl mb-4 pl-5">Top Rated Shows</h1>
+            <Link href={`/explore/genres/top_rated_shows/1`} className='pr-6 text-blue-400'>view all<ArrowCircleRightIcon className='text-4xl'/></Link>
+          </div>
         <MovieListSwiper MovieList={topRatedTvShows} />
       </div>
       <div className="w-screen relative flex flex-col md:flex-row justify-center md:h-full h-fit mt-10" >
@@ -107,7 +123,7 @@ export default async function Home() {
 
 async function getPopularMovies(){
   const res = await fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${process.env.TMDB_API_KEY}`);
-  const res2 = await fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${process.env.TMDB_API_KEY}&with_original_language=hi|kn|ml|ta|te&primary_release_date.gte=2015-01-01`);
+  const res2 = await fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${process.env.TMDB_API_KEY}&with_original_language=hi|kn|ml|ta|te&primary_release_date.gte=2018-01-01`);
   if(!res.ok)throw new Error('Failed to fetch popular movies');
   if(!res2.ok)throw new Error('Failed to fetch popular movies');
   const response = await res.json();

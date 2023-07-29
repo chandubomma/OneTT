@@ -10,7 +10,7 @@ const ShowSearchResluts = ({searchResults}) => {
     const [genresFilter,setGenresFilter] = useState({});
     const [rating,setRating] = useState(0);
     const [runtime,setRuntime] = useState(0);
-  var results = [...searchResults];
+  var results=[...searchResults]
   results=categoryHandler(category,results);
   results=languageHandler(language,results);
   results=genresHandler(genresFilter,results);
@@ -30,7 +30,8 @@ const ShowSearchResluts = ({searchResults}) => {
       <div className="  w-full">
         <div className='grid grid-cols-2 md:grid-cols-4 gap-x-6 md:gap-y-6 gap-y-1 w-fit m-auto pt-5 justify-items-center justify-center'>
         {results.map(result=>(
-            <MovieCard key={result.id} movie={result}/>
+            result?
+            <MovieCard key={result.id} movie={result}/>:''
         ))}
         </div>
       </div>
@@ -43,6 +44,7 @@ const ShowSearchResluts = ({searchResults}) => {
 export default ShowSearchResluts
 
 function sortByHandler(sortBy,searchResults){
+  
   switch(sortBy){
     case 'RD' : {
         searchResults.sort((m1,m2)=>m2.vote_average-m1.vote_average);

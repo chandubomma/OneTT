@@ -8,8 +8,8 @@ const Search = async ({params}) => {
     <div>
         {
             searchResults.length>0?
-            <div>
-              <h2 className="text-2xl text-blue-300 font-bold mb-4 text-start pl-5 dark:text-white">Search results for {params.search} :</h2>
+            <div> <h2 className="text-2xl text-blue-300 font
+             -bold mb-4 text-start pl-5 dark:text-white">Search results for {params.search} :</h2>
               <ShowSearchResluts searchResults={searchResults}/>
             </div>
             :

@@ -45,7 +45,8 @@ const SortAndFilters = ({genres,
    
   return (
 
-    <div className='flex md:flex-col md:w-[20rem] w-screen h-fit px-8 pr-10 py-6 pb-16 bg-gradient-to-r from-blue-300 to-gray-300 pt-12
+
+    <div className='flex top-screen  md:flex-col md:w-[20rem] w-screen h-fit px-8 pr-10 py-6 pb-16 bg-gradient-to-r from-blue-300 to-gray-300 pt-12
             dark:text-white ml-5 rounded-2xl shadow-lg shadow-gray-400 dark:bg-gradient-to-l dark:from-slate-600 dark:to-blue-900 dark:shadow-black'>
       <div className='w-full font-semibold text-gray-500 text-md'>
         <select defaultValue="none"  className='border-4 border-white focus:outline-none p-2 rounded-lg block w-full' onClick={(e)=>setSortBy(e.target.value)}>
@@ -59,10 +60,11 @@ const SortAndFilters = ({genres,
         </select>
       </div>
       <div className='md:mt-5'>
-        <h1 className='md:text-lg font-semibold text-gray-600'>Filters</h1>
+        <h1 className='md:text-lg font-semibold text-gray-600 dark:text-gray-200'>Filters</h1>
+        <div>
         <div className='pl-4'>
-            <h3 className='md:text-md font-semibold text-gray-600'>Language</h3>
-           <div className='grid grid-cols-2 gap-y-2 pl-2 text-md font-medium text-gray-500 p-2 py-4'>
+            <h3 className='md:text-md font-semibold text-gray-600 dark:text-gray-300'>Language</h3>
+           <div className='grid grid-cols-2 gap-y-2 pl-2 text-md font-medium text-gray-500 dark:text-gray-400 p-2 py-4'>
                 <div className=''>
                     <input type='checkbox' id='All' value="All" className='w-4 h-4 mr-2' defaultChecked onChange={(e)=>handleLanguage(e)}/>
                     <label forhtml="All">All</label>
@@ -94,7 +96,7 @@ const SortAndFilters = ({genres,
            </div>
         </div>
         <div className='w-full font-semibold text-gray-500 text-md md:mt-3'>
-            <h1 className='text-gray-600 pl-2 font-semibold mb-2'>Category</h1>
+            <h1 className='text-gray-600 pl-2 font-semibold mb-2 dark:text-gray-300'>Category</h1>
             <select defaultValue="All" className='border-4 border-white focus:outline-none p-2 rounded-lg block w-full' onClick={(e)=>setCategory(e.target.value)}>
                 <option value='All' selected>All</option>
                 <option value='movies'>Movies</option>
@@ -105,7 +107,7 @@ const SortAndFilters = ({genres,
         {
             genres?
             <div className='w-full mt-5 pl-2 text-gray-600 font-semibold text-md'>
-                <h3 className=''>Genres</h3>
+                <h3 className='dark:text-gray-300'>Genres</h3>
                 <div className='flex flex-wrap w-full mt-3'>
                     {
                         genres.map(genre=>(
@@ -117,9 +119,11 @@ const SortAndFilters = ({genres,
         }
 
         <div className='w-full font-semibold text-gray-600 text-md md:mt-5'>
-            <h3 className='pl-2'>Rating</h3>
+            <h3 className='pl-2 dark:text-gray-300'>Rating</h3>
             <input type='range' min={0} max={100} className='w-full' />
         </div>
+        </div>
+       
       </div>
     </div>
   )
