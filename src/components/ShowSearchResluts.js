@@ -8,8 +8,6 @@ const ShowSearchResluts = ({searchResults}) => {
     const [language,setLanguage] = useState({All:true});
     const [category,setCategory] = useState("All");
     const [genresFilter,setGenresFilter] = useState({});
-    const [rating,setRating] = useState(0);
-    const [runtime,setRuntime] = useState(0);
   var results=[...searchResults]
   results=categoryHandler(category,results);
   results=languageHandler(language,results);
@@ -121,6 +119,7 @@ function genresHandler(genresFilter,results){
   if(newResults.length==0)return results;
   return newResults;
 }
+
 
 const genres= [
   {

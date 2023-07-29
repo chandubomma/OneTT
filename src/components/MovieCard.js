@@ -7,7 +7,7 @@ const MovieCard = ({movie}) => {
     if(movie.poster_path)
     imgUrl="https://image.tmdb.org/t/p/original"+movie.poster_path;
     else if(movie.backdrop_path) imgUrl="https://image.tmdb.org/t/p/original"+movie.backdrop_path;
-    else return(<div>Not Available</div>);
+    else return(<div className='w-fit md:w-52 border-2 my-8 bg-gray-300 border-gray-400 flex  justify-center items-center text-lg text-gray-500 rounded-lg font-medium'>Not Available</div>);
     let votePercent = movie.vote_average*10;
     if(votePercent>=100)votePercent=99;
     votePercent=votePercent.toPrecision(2);

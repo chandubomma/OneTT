@@ -19,7 +19,7 @@ const HomeSwiperSlide = ({movie}) => {
       <div className="absolute top-52 md:top-60 left-5">
         <h1 className="z-40 text-white font-bold text-3xl md:text-4xl ">{movie.title}</h1>
         <h4 className="text-white text-sm font-medium pl-1 mt-1">{releaseDate}</h4>
-        <Link href="#" className="text-white text-md inline-block bg-blue-500 dark:bg-gradient-to-r dark:from-blue-600 dark:to-slate-600
+        <Link href={`/movie_details/${movie.id}`} className="text-white text-md inline-block bg-blue-500 dark:bg-gradient-to-r dark:from-blue-600 dark:to-slate-600
          py-2 px-4 mt-3 rounded-3xl hover:bg-white hover:text-blue-500 ease-out duration-300 font-medium">
           View Movie
         </Link>

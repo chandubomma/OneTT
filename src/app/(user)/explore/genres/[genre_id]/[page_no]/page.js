@@ -45,7 +45,7 @@ const page = async({params}) => {
     <div>
          <h2 className="text-2xl text-blue-300 font-bold mb-4 text-start pl-5 dark:text-white">{pageHeading}</h2>
         <ShowSearchResluts searchResults={results}/>
-        <div className="w-full flex justify-end my-10 pr-36">
+        <div className="w-full flex justify-end my-10 md:pr-36 pr-24">
           {
             params.page_no>1?
             <Link href={`/explore/genres/${params.genre_id}/${Number(params.page_no)-1}`} className='py-2 px-3 bg-gray-600 text-lg text-gray-300 w-fit mx-1 rounded-sm'>Go Back</Link>:''
