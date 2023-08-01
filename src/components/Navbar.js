@@ -5,11 +5,13 @@ import Menu from "./Menu";
 import Theme from "./Theme";
 import { useRef,useState} from "react";
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import { useSession} from "next-auth/react";
 
 
 const Navbar = () => {
     const [menuOpen,setMenuOpen] = useState(false);
     const menuRef = useRef(null);
+    const session = useSession();
   return (
     <div className="h-16  w-screen z-50 shadow-md shadow-blue-500 dark:shadow-slate-200 fixed flex justify-between bg-white dark:bg-gradient-to-l dark:from-slate-950 dark:to-blue-950">
         <div className="flex felx-row">
@@ -23,7 +25,20 @@ const Navbar = () => {
         <Menu menuRef={menuRef} setMenuOpen={setMenuOpen}/>
       <div className="flex flex-row my-2">
         <Theme/>
-        <div><AccountCircleIcon className="dark:text-white text-5xl text-gray-400 mr-3"/></div>
+        {
+          session.data?
+          <div className="mr-3">
+            <img
+              src = {session.data.user.image}
+              alt = ''
+              width={45}
+              height = {45}
+              className="rounded-full"
+            />
+          </div>:
+          <div><AccountCircleIcon className="dark:text-white text-5xl text-gray-400 mr-3"/></div>
+        }
+        
       </div>
       
     </div>

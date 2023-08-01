@@ -1,8 +1,11 @@
 'use client'
 import React from 'react'
 import Link from 'next/link'
+import { signOut,useSession } from 'next-auth/react'
 
 const Menu = ({menuRef,setMenuOpen}) => {
+    const session = useSession();
+    console.log(session);
     const handleClick = ()=>{
         menuRef.current.classList.add("-left-full")
         menuRef.current.classList.remove("left-0")
@@ -26,10 +29,17 @@ const Menu = ({menuRef,setMenuOpen}) => {
                 <Link href="/settings">Settings</Link>
             </div>
 
-            <div className="flex flex-row m-2 text-xl font-semibold justify-center">
-                <Link href="/login" className="dark:bg-white bg-gray-300 px-5 md:py-2 py-3 mx-1 rounded-lg text-blue-500 w-1/2 md:w-auto">Login</Link>
-                <Link href="/register" className="bg-blue-400 px-5 md:py-2 py-3 mx-1 rounded-lg text-white w-1/2 md:w-auto">Register</Link>
-            </div>
+            {
+                session.data?
+                <div className="flex flex-row m-2 text-lg font-semibold justify-center">
+                <button onClick={()=>signOut()} className="dark:bg-white bg-gray-300 px-5 md:py-2 py-3 mx-1 rounded-lg text-blue-500 w-1/2 md:w-auto">Sign Out</button>
+                </div>:
+                <div className="flex flex-row m-2 text-lg font-semibold justify-center">
+                <Link href="/api/auth/signin/signin" className="bg-blue-400 px-5 md:py-2 py-3 mx-1 rounded-lg text-white w-1/2 md:w-auto">Sign In</Link>
+                <Link href="/api/auth/signin/signup" className="dark:bg-white bg-gray-300 px-5 md:py-2 py-3 mx-1 rounded-lg text-blue-500 w-1/2 md:w-auto">Sign Up</Link>
+                
+                </div>
+            }
 
       </div>
   )
