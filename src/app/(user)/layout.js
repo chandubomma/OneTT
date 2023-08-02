@@ -2,6 +2,7 @@ import '../global.css'
 import { Inter } from 'next/font/google'
 import Navbar from '@/components/Navbar'
 import NextAuthProvider from '@/components/NextAuthProvider'
+import Footer from '@/components/Footer'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -13,14 +14,14 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className="bg-white dark:bg-gradient-to-l dark:from-slate-950 dark:to-blue-950 h-screen w-screen no-scrollbar">
+      <body className="bg-white dark:bg-gradient-to-l dark:from-slate-950 dark:to-blue-950 h-fit min-h-screen w-screen no-scrollbar">
        <NextAuthProvider>
           <Navbar/>
-          <div className="pt-16 h-screen">
+          <div className="pt-16 min-h-screen">
             {children}
           </div>
        </NextAuthProvider>
-       
+       <Footer/>
       </body>
     </html>
   )
