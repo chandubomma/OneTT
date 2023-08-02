@@ -1,10 +1,15 @@
 import Image from "next/image";
 import ImageSlider from "@/components/ImageSlider";
+import MovieListSwiper from "@/components/MovieListSwiper";
+import Link from "next/link";
 
 const page = async({params}) => {
     const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
     const movie = await fetchMovieById(params.movie_id);
+    const watchProviders = await fetchWatchProviders(params.movie_id);
+    const similarMovies = await fetchSimilarMoveis(movie);
     const imgUrl = "https://image.tmdb.org/t/p/original"+movie.backdrop_path;
+    const baseUrl =  "https://image.tmdb.org/t/p/original";
     const images = await fetchMovieImages(params.movie_id);
     const votePercent = movie.vote_average*10;
     const temp_date = movie.release_date.split('-');
@@ -43,11 +48,101 @@ const page = async({params}) => {
       <div className="md:ml-[28rem] mt-5">
             <h1 className="md:text-5xl text-3xl ml-2 text-blue-500 dark:text-white font-bold">{movie.title}</h1>
             <h4 className="text-gray-500 text-lg font-medium pl-3 mt-4">{releaseDate}</h4>
+            <div className="mt-5">
+              <Link href={watchProviders?watchProviders.link:""} className="text-lg font-medium text-gray-100 bg-gradient-to-r from-gray-500 to-slate-400 py-2 px-4 rounded-3xl ml-2">Watch now</Link>
+            </div>
       </div>
+      
       <div className="md:mt-20 md:ml-5 ml-2 mt-5">
-        <h2 className="text-2xl text-blue-500 dark:text-white font-bold ">Overview :</h2>
+        <h2 className="text-2xl text-blue-500 dark:text-white font-bold ">Overview </h2>
         <h3 className="text-xl text-gray-400 font-semibold tracking-wider mt-2">{movie.overview}</h3>
       </div>
+      {watchProviders?
+      <div className="md:mt-10 md:ml-5 ml-2 mt-5">
+        <h2 className="text-2xl text-blue-500 dark:text-white font-bold ">Watch Options </h2>
+        <h4 className="text-lg my-5 text-blue-500 dark:text-white font-semibold">Buy</h4>
+        <div className="flex flex-row">
+          {
+            watchProviders.buy?
+            watchProviders.buy.map(option=>(
+              <a href={watchProviders.link} className="flex flex-col items-center justify-center mx-5">
+                <Image
+                src={baseUrl+option.logo_path}
+                alt={option.provider_name}
+                width={240}
+                height={240}
+                className="rounded-full  w-12 h-12"
+                />
+                <h5 className="text-sm text-gray-500 font-bold mt-4">{option.provider_name}</h5>
+              </a>
+
+            )):<h4 className="text-md text-gray-400 font-semibold">Not Available</h4>
+          }
+        </div>
+        <h4 className="text-lg my-5 text-blue-500 dark:text-white font-semibold">Rent</h4>
+        <div className="flex flex-row ">
+          {
+            watchProviders.rent?
+            watchProviders.rent.map(option=>(
+              <a href={watchProviders.link} className="flex flex-col items-center justify-center mx-5">
+                <Image
+                src={baseUrl+option.logo_path}
+                alt={option.provider_name}
+                width={240}
+                height={240}
+                className="rounded-full  w-12 h-12"
+                />
+                <h5 className="text-sm text-gray-500 font-bold mt-4">{option.provider_name}</h5>
+              </a>
+
+            )):<h4 className="text-md text-gray-400 font-semibold">Not Available</h4>
+          }
+        </div>
+        <h4 className="text-lg my-5 text-blue-500 dark:text-white font-semibold">Stream</h4>
+        <div className="flex flex-row">
+          {
+            watchProviders.flatrate?
+            watchProviders.flatrate.map(option=>(
+              <a href={watchProviders.link} className="flex flex-col items-center justify-center mx-5">
+                <Image
+                src={baseUrl+option.logo_path}
+                alt={option.provider_name}
+                width={240}
+                height={240}
+                className="rounded-full  w-12 h-12"
+                />
+                <h5 className="text-sm text-gray-500 font-bold mt-4">{option.provider_name}</h5>
+              </a>
+
+            )):<h4 className="text-md text-gray-400 font-semibold">Not Available</h4>
+          }
+        </div>
+        <h4 className="text-lg my-5 text-blue-500 dark:text-white font-semibold">Ads</h4>
+        <div className="flex flex-row ">
+          {
+            watchProviders.ads?
+            watchProviders.ads.map(option=>(
+              <a href={watchProviders.link} className="flex flex-col items-center justify-center mx-5">
+                <Image
+                src={baseUrl+option.logo_path}
+                alt={option.provider_name}
+                width={240}
+                height={240}
+                className="rounded-full  w-12 h-12"
+                />
+                <h5 className="text-sm text-gray-500 font-bold mt-4">{option.provider_name}</h5>
+              </a>
+
+            )):<h4 className="text-md text-gray-400 font-semibold">Not Available</h4>
+          }
+        </div>
+      </div>:''}
+
+      <div className="pt-6 dark:shadow-inner">
+        <h1 className="text-blue-500 dark:text-white font-bold text-2xl mb-4 md:pl-5 pl-2">Similar Movies</h1>
+        <MovieListSwiper MovieList={similarMovies} />
+      </div>
+
     </div>
   )
 }
@@ -66,4 +161,18 @@ async function fetchMovieImages(id){
     if(!res.ok)console.log('failed to fetch movie images');
     const response = await res.json()
     return response.backdrops.slice(0,5);
+}
+
+async function fetchWatchProviders(id){
+  const res = await fetch(`https://api.themoviedb.org/3/movie/${id}/watch/providers?api_key=${process.env.TMDB_API_KEY}`)
+  if(!res.ok)console.log('failed to fetch movie images');
+  const response = await res.json()
+  return response.results.IN;
+}
+
+async function fetchSimilarMoveis(movie){
+  const res = await fetch(`https://api.themoviedb.org/3/movie/${movie.id}/recommendations?api_key=${process.env.TMDB_API_KEY}&language=${movie.original_language}`)
+  if(!res.ok)console.log('failed to fetch movie images');
+  const response = await res.json()
+  return response.results;
 }

@@ -5,7 +5,6 @@ import { signOut,useSession } from 'next-auth/react'
 
 const Menu = ({menuRef,setMenuOpen}) => {
     const session = useSession();
-    console.log(session);
     const handleClick = ()=>{
         menuRef.current.classList.add("-left-full")
         menuRef.current.classList.remove("left-0")
