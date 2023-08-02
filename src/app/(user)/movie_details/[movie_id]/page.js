@@ -2,6 +2,7 @@ import Image from "next/image";
 import ImageSlider from "@/components/ImageSlider";
 import MovieListSwiper from "@/components/MovieListSwiper";
 import Link from "next/link";
+import AddIcon from '@mui/icons-material/Add';
 
 const page = async({params}) => {
     const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
@@ -49,11 +50,12 @@ const page = async({params}) => {
             <h1 className="md:text-5xl text-3xl ml-2 text-blue-500 dark:text-white font-bold">{movie.title}</h1>
             <h4 className="text-gray-500 text-lg font-medium pl-3 mt-4">{releaseDate}</h4>
             <div className="mt-5">
-              <Link href={watchProviders?watchProviders.link:""} className="text-lg font-medium text-gray-100 bg-gradient-to-r from-gray-500 to-slate-400 py-2 px-4 rounded-3xl ml-2">Watch now</Link>
+              <Link href={watchProviders?watchProviders.link:""} className="text-lg font-medium text-gray-100 bg-gradient-to-r from-gray-500 to-slate-400 py-2.5 px-4 rounded-3xl ml-2">Watch now</Link>
+              <button className="text-lg font-medium text-gray-100 bg-gradient-to-r from-blue-600 to-blue-300 py-2 px-4 rounded-3xl ml-2"><AddIcon className="pb-1"/> Watch List</button>
             </div>
       </div>
       
-      <div className="md:mt-20 md:ml-5 ml-2 mt-5">
+      <div className="md:mt-12 md:ml-5 ml-2 mt-5">
         <h2 className="text-2xl text-blue-500 dark:text-white font-bold ">Overview </h2>
         <h3 className="text-xl text-gray-400 font-semibold tracking-wider mt-2">{movie.overview}</h3>
       </div>
