@@ -50,15 +50,15 @@ export default function page(){
                     <h3 className="mb-4 text-xl text-blue-500 font-medium"><strong>Sign Up</strong></h3>
                     <form method='POST' onSubmit={(e)=>handleSignUp(e)}>
                         <div className=" mb-3 mt-4 relative">
-                            <PersonIcon className='absolute top-3 left-2 text-gray-500'/>
+                            <PersonIcon className='absolute top-3 left-2 text-blue-500'/>
                             <input type="text" className="w-80 p-3 pl-10 border-2 border-blue-500 focus:outline-blue-500 text-gray-500 rounded-md" id="name" placeholder="Username" name="name" onChange={(e)=>handleInputChange(e)} required/>
                         </div>
                         <div className=" mb-3 mt-3 relative">
-                            <EmailIcon className='absolute top-3 left-2 text-gray-500'/>
+                            <EmailIcon className='absolute top-3 left-2 text-blue-500'/>
                             <input type="email" className="w-80 p-3 pl-10 border-2 border-blue-500 focus:outline-blue-500 text-gray-500 rounded-md" id="email" placeholder="Email" name="email" onChange={(e)=>handleInputChange(e)} required/>
                         </div>
                         <div className=" mb-3 mt-3 relative">
-                            <LockIcon className='absolute top-3 left-2 text-gray-500'/>
+                            <LockIcon className='absolute top-3 left-2 text-blue-500'/>
                             <input type="password" className="w-80 p-3 pl-10 border-2 border-blue-500 focus:outline-blue-500 text-gray-500 rounded-md" id="password" placeholder="Password" name="password" onChange={(e)=>handleInputChange(e)} required/>
                         </div>
                         <div className="mt-4">
