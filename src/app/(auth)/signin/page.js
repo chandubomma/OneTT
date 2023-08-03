@@ -8,7 +8,7 @@ import Link from 'next/link';
 import GoogleIcon from '@mui/icons-material/Google';
 
 
-export default function page(){
+export default function SignIn(){
     const [user,setUser] = useState({});
     const router = useRouter();
     const searchParams = useSearchParams();

@@ -9,7 +9,7 @@ import GoogleIcon from '@mui/icons-material/Google';
 import Link from 'next/link';
 
 
-export default function page(){
+export default function SignUp(){
     const [user,setUser] = useState({});
     const router = useRouter();
     const searchParams = useSearchParams();

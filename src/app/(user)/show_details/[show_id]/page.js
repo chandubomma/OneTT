@@ -37,7 +37,7 @@ const page = async({params}) => {
 
         <div className="absolute md:top-[25rem] top-[18rem] md:left-[28rem] flex flex-wrap ml-2">
             {show.genres.map((genre)=>(
-                <div className="text-md text-gray-100 bg-gradient-to-r from-blue-500 to-slate-500 py-2 px-4 rounded-3xl mx-1 my-2">{genre.name}</div>
+                <div key={genre.id} className="text-md text-gray-100 bg-gradient-to-r from-blue-500 to-slate-500 py-2 px-4 rounded-3xl mx-1 my-2">{genre.name}</div>
             ))}
         </div>
 
@@ -68,7 +68,7 @@ const page = async({params}) => {
           {
             watchProviders.buy?
             watchProviders.buy.map(option=>(
-              <a href={watchProviders.link} className="flex flex-col items-center justify-center mx-5">
+              <a key={"buy"+option.provider_name} href={watchProviders.link} className="flex flex-col items-center justify-center mx-5">
                 <Image
                 src={baseUrl+option.logo_path}
                 alt={option.provider_name}
@@ -87,7 +87,7 @@ const page = async({params}) => {
           {
             watchProviders.rent?
             watchProviders.rent.map(option=>(
-              <a href={watchProviders.link} className="flex flex-col items-center justify-center mx-5">
+              <a key={"rent"+option.provider_name} href={watchProviders.link} className="flex flex-col items-center justify-center mx-5">
                 <Image
                 src={baseUrl+option.logo_path}
                 alt={option.provider_name}
@@ -106,7 +106,7 @@ const page = async({params}) => {
           {
             watchProviders.flatrate?
             watchProviders.flatrate.map(option=>(
-              <a href={watchProviders.link} className="flex flex-col items-center justify-center mx-5">
+              <a key={"flatrate"+option.provider_name} href={watchProviders.link} className="flex flex-col items-center justify-center mx-5">
                 <Image
                 src={baseUrl+option.logo_path}
                 alt={option.provider_name}
@@ -125,7 +125,7 @@ const page = async({params}) => {
           {
             watchProviders.ads?
             watchProviders.ads.map(option=>(
-              <a href={watchProviders.link} className="flex flex-col items-center justify-center mx-5">
+              <a key={"ads"+option.provider_name} href={watchProviders.link} className="flex flex-col items-center justify-center mx-5">
                 <Image
                 src={baseUrl+option.logo_path}
                 alt={option.provider_name}

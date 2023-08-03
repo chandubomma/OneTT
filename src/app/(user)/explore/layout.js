@@ -2,7 +2,7 @@
 import SearchBar from '@/components/SearchBar';
 import { useRouter } from 'next/navigation';
 
-const layout = ({children}) => {
+const Layout = ({children}) => {
     const router = useRouter();
     const searchHandler = (searchQuery)=>{
        if(searchQuery.length>0){
