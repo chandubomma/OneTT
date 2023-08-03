@@ -1,5 +1,7 @@
 import ExploreSwiper from '@/components/ExploreSwiper';
 
+export const revalidate = 86400;
+
 const Explore = async() => {
   
    const genres= [

@@ -1,5 +1,6 @@
 import ShowSearchResluts from "@/components/ShowSearchResluts";
 import Link from "next/link";
+export const revalidate = 86400;
 
 const page = async({params}) => {
   let results;

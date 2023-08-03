@@ -1,5 +1,6 @@
 import ShowSearchResluts from "@/components/ShowSearchResluts";
 import NoSearchResults from "@/components/NoSearchResults";
+export const revalidate = 86400;
 
 const Search = async ({params}) => {
     const searchResults = await searchQuery(params.search);
