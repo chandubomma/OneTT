@@ -100,17 +100,17 @@ export default async function Home() {
                 </h1>
             </div>
             <div className="flex flex-row m-2 text-xl font-medium justify-center mt-8  md:dark:pl-96">
-                <Link href="/login" className="dark:bg-white bg-gray-300 px-5 md:py-2 py-3 mx-2 rounded-lg text-blue-500 w-1/2 md:w-auto">Login</Link>
-                <Link href="/register" className="bg-blue-400 px-5 md:py-2 py-3 mx-2 rounded-lg text-white w-1/2 md:w-auto">Register</Link>
+                <Link href="/signin" className="dark:bg-white bg-gray-300 px-5 md:py-2 py-3 mx-2 rounded-lg text-blue-500 w-1/2 md:w-auto">Sign In</Link>
+                <Link href="/signup" className="bg-blue-400 px-5 md:py-2 py-3 mx-2 rounded-lg text-white w-1/2 md:w-auto">Sign Up</Link>
             </div>
             
           </RevealOnScrollFromRight>
         </div>
       </div>
 
-      <div className="w-screen h-fit  flex justify-center dark:text-white text-center md:text-5xl text-4xl opacity-100 md:opacity-100 mt-20  text-blue-500 font-bold ">
+      <div className="w-screen h-fit  flex justify-center dark:text-white text-center md:text-5xl text-4xl opacity-100 md:opacity-100 mt-20 md:mt-64  text-blue-500 font-bold ">
         <RevealOnScrollOpacity>
-          <h1 className="">Movies , TV Shows many More...</h1>
+          <h1 className="">Movies, TV Shows and many More...</h1>
           <h1 className="mt-4">Add to watchlist, favourites</h1>
           <Link href="/explore" className="bg-blue-400 inline-block text-xl mt-8 font-medium px-5 md:py-2 py-3 mx-2 rounded-lg text-white w-1/2 md:w-auto">Explore Now</Link>
         </RevealOnScrollOpacity>

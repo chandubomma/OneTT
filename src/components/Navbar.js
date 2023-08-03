@@ -37,7 +37,7 @@ const Navbar = () => {
                 height = {45}
                 className="rounded-full"
               />:
-              <div><AccountCircleIcon className="dark:text-white text-5xl text-gray-400 mr-3"/></div>
+              <div className=" py-2.5 px-5 rounded-full bg-gradient-to-r from-blue-500 to-gray-400 text-gray-100 font-medium text-xl text-center">{session.data.user.name[0]}</div>
             }
           </div>:
           <div><AccountCircleIcon className="dark:text-white text-5xl text-gray-400 mr-3"/></div>
