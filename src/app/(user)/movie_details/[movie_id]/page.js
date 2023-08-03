@@ -24,6 +24,7 @@ const page = async({params}) => {
             width={1300}
             height={1000}
             priority
+            unoptimized
             className="md:h-[30rem] w-screen h-[26rem]"
         />
 
@@ -74,6 +75,7 @@ const page = async({params}) => {
                 width={240}
                 height={240}
                 className="rounded-full  w-12 h-12"
+                unoptimized
                 />
                 <h5 className="text-sm text-gray-500 font-bold mt-4">{option.provider_name}</h5>
               </a>
@@ -92,6 +94,7 @@ const page = async({params}) => {
                 alt={option.provider_name}
                 width={240}
                 height={240}
+                unoptimized
                 className="rounded-full  w-12 h-12"
                 />
                 <h5 className="text-sm text-gray-500 font-bold mt-4">{option.provider_name}</h5>
@@ -111,6 +114,7 @@ const page = async({params}) => {
                 alt={option.provider_name}
                 width={240}
                 height={240}
+                unoptimized
                 className="rounded-full  w-12 h-12"
                 />
                 <h5 className="text-sm text-gray-500 font-bold mt-4">{option.provider_name}</h5>
@@ -130,6 +134,7 @@ const page = async({params}) => {
                 alt={option.provider_name}
                 width={240}
                 height={240}
+                unoptimized
                 className="rounded-full  w-12 h-12"
                 />
                 <h5 className="text-sm text-gray-500 font-bold mt-4">{option.provider_name}</h5>

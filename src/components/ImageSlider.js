@@ -31,6 +31,7 @@ const ImageSlider = ({images}) => {
                 width={600}
                 height={600}
                 className='w-80 h-80'
+                unoptimized
             />
         </SwiperSlide>
        ))}

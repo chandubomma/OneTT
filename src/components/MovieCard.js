@@ -32,6 +32,7 @@ const MovieCard = ({movie}) => {
                     height={400}
                     className="md:h-72 md:w-52 h-48 w-40 rounded-lg shadow hover:shadow-xl hover:cursor-pointer hover:scale-105  duration-300 ease-out"
                     priority={true}
+                    unoptimized
                 />
 
             </div>

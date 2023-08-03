@@ -67,6 +67,7 @@ export default async function Home() {
                   width={600}
                   height={300}
                   priority
+                  unoptimized
                 />
             </RevealOnScrollOpacity>
         </div>

@@ -63,7 +63,7 @@ const SortAndFilters = ({genres,
             dark:text-white md:ml-5 md:rounded-2xl md:shadow-lg shadow-gray-400 dark:bg-gradient-to-l dark:from-slate-600 dark:to-blue-900 dark:shadow-black
                 '>
       <div className='w-full font-semibold text-gray-500 text-md '>
-        <select defaultValue="none"  className='border-4 border-white focus:outline-none p-2 py-3 md:py-2 rounded-lg block w-full' onClick={(e)=>setSortBy(e.target.value)}>
+        <select defaultValue="none"  className='border-4 border-white bg-white focus:outline-none p-2 py-3 md:py-2 rounded-lg block w-full' onClick={(e)=>setSortBy(e.target.value)}>
             <option value="none">--Sort By--</option>
             <option value="RD">Rating Descending</option>
             <option value="RA">Rating Ascending</option>
@@ -115,7 +115,7 @@ const SortAndFilters = ({genres,
             </div>
             <div className='w-full font-semibold text-gray-500 text-md mt-3'>
                 <h1 className='text-gray-600 pl-2 font-semibold mb-2 dark:text-gray-300'>Category</h1>
-                <select defaultValue="All" className='border-4 border-white focus:outline-none p-2 py-3 md:py-2 rounded-lg block w-full' onClick={(e)=>setCategory(e.target.value)}>
+                <select defaultValue="All" className='border-4 bg-white border-white focus:outline-none p-2 py-3 md:py-2 rounded-lg block w-full' onClick={(e)=>setCategory(e.target.value)}>
                     <option value='All' selected>All</option>
                     <option value='movies'>Movies</option>
                     <option value='shows'>TV Shows</option>

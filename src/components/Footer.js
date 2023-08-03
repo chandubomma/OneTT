@@ -1,7 +1,7 @@
 
 const Footer = () => {
   return (
-    <footer className="bg-gradient-to-r from-blue-500 to-gray-500 text-white mt-32  dark:bg-gradient-to-r dark:from-blue-900 dark:to-gray-800">
+    <footer className="bg-gradient-to-r from-blue-500 to-gray-500 text-white mt-32  dark:bg-gradient-to-r dark:from-blue-900 dark:to-gray-800 overflow-x-hidden">
       <div className="container mx-auto py-8">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
           <div className="pl-4">
@@ -35,7 +35,7 @@ const Footer = () => {
             <h3 className="font-semibold text-xl mb-4">Connect with Us</h3>
             <div className="flex ">
                 <div>
-                    <textarea className="p-2 rounded-lg focus:outline-blue-700 text-gray-400" placeholder="Please write us a feedback!" rows="4" cols={40}/><br/>
+                    <textarea className="p-2 rounded-lg focus:outline-blue-700 text-gray-400 resize-none" placeholder="Please write us a feedback!" rows="4" cols={30}/><br/>
                     <button className="bg-white py-2 px-3 rounded-xl text-gray-500 mt-2 font-medium">Submit</button>
                 </div>
             </div>
