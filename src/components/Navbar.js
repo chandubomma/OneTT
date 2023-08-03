@@ -4,7 +4,7 @@ import MenuIcons from "./MenuIcons";
 import Menu from "./Menu";
 import Theme from "./Theme";
 import { useRef,useState} from "react";
-import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+
 import { useSession} from "next-auth/react";
 
 
@@ -40,7 +40,11 @@ const Navbar = () => {
               <div className=" py-2.5 px-5 rounded-full bg-gradient-to-r from-blue-500 to-gray-400 text-gray-100 font-medium text-xl text-center">{session.data.user.name[0]}</div>
             }
           </div>:
-          <div><AccountCircleIcon className="dark:text-white text-5xl text-gray-400 mr-3"/></div>
+          <div> <img
+          src='/onett_user_profile.jpeg'
+          alt="user profile"
+          className="w-12 h-12 rounded-full mr-4"
+        /></div>
         }
         
       </div>

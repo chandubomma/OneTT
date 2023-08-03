@@ -1,7 +1,7 @@
 'use client'
 import { useSession,signOut } from 'next-auth/react';
 
-import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+
 import Link from 'next/link';
 
 const Settings = () => {
@@ -27,7 +27,11 @@ const Settings = () => {
             </div>
           </div>:
           <div className="flex flex-col w-screen justify-center items-center">
-            <AccountCircleIcon className="w-40 h-40 text-gray-400 mb-4"/>
+            <img
+                src='/onett_user_profile.jpeg'
+                alt="user profile"
+                className="w-40 h-40 rounded-full mb-4"
+              />
             <div className='flex flex-col center w-fit'>
             <div className='flex flex-col items-center justify-center'><h2 className='text-md text-blue-500 font-bold dark:text-gray-400'>Username- </h2><h2 className='text-lg text-gray-500 font-semibold dark:text-gray-100'> your cool username</h2></div>
             <div className='flex  flex-col items-center justify-center mt-2'><h2 className='text-md text-blue-500 font-bold dark:text-gray-400'>Email-</h2><h2 className='text-lg text-gray-500 font-semibold dark:text-gray-100'> yourusername@gmail.com</h2></div>
