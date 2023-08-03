@@ -28,13 +28,17 @@ const Navbar = () => {
         {
           session.data?
           <div className="mr-3">
-            <img
-              src = {session.data.user.image}
-              alt = ''
-              width={45}
-              height = {45}
-              className="rounded-full"
-            />
+            {
+              session.data.user.image?
+              <img
+                src = {session.data.user.image}
+                alt = ''
+                width={45}
+                height = {45}
+                className="rounded-full"
+              />:
+              <div><AccountCircleIcon className="dark:text-white text-5xl text-gray-400 mr-3"/></div>
+            }
           </div>:
           <div><AccountCircleIcon className="dark:text-white text-5xl text-gray-400 mr-3"/></div>
         }

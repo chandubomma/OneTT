@@ -34,8 +34,8 @@ const Menu = ({menuRef,setMenuOpen}) => {
                 <button onClick={()=>signOut()} className="dark:bg-white bg-gray-300 px-5 md:py-2 py-3 mx-1 rounded-lg text-blue-500 w-1/2 md:w-auto">Sign Out</button>
                 </div>:
                 <div className="flex flex-row m-2 text-lg font-semibold justify-center">
-                <Link href="/api/auth/signin/signin" className="bg-blue-400 px-5 md:py-2 py-3 mx-1 rounded-lg text-white w-1/2 md:w-auto">Sign In</Link>
-                <Link href="/api/auth/signin/signup" className="dark:bg-white bg-gray-300 px-5 md:py-2 py-3 mx-1 rounded-lg text-blue-500 w-1/2 md:w-auto">Sign Up</Link>
+                <Link href="/api/auth/signin" className="bg-blue-400 px-5 md:py-2 py-3 mx-1 rounded-lg text-white w-1/2 md:w-auto">Sign In</Link>
+                <Link href="/signup" className="dark:bg-white bg-gray-300 px-5 md:py-2 py-3 mx-1 rounded-lg text-blue-500 w-1/2 md:w-auto">Sign Up</Link>
                 
                 </div>
             }
