@@ -1,34 +1,94 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
 
-First, run the development server:
+# OneTT
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+![OneTT Logo](https://github.com/user-attachments/assets/d6c2bca3-0211-43e1-8e0d-57dcfb1b8ba7)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+Explore Movies and TV Shows with Ease
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+---
 
-## Learn More
+## Table of Contents
 
-To learn more about Next.js, take a look at the following resources:
+1. [Introduction](#introduction)
+2. [Tech Stack](#tech-stack)
+3. [Features](#features)
+4. [Image Gallery](#image-gallery)
+5. [Usage](#usage)
+6. [Contact](#contact)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Introduction
 
-## Deploy on Vercel
+Welcome to **OneTT** - your go-to website for browsing and discovering movies and TV shows. With a beautiful UI and advanced features, OneTT offers a seamless and enjoyable browsing experience.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+**What is OneTT?**
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+OneTT is a movie and TV show browsing website built with Next.js. It features a stunning UI, dark mode, advanced search, sorting, and filtering options, and secure authentication with NextAuth.
+
+**Why OneTT?**
+
+- **Beautiful UI**: Enjoy a visually appealing interface.
+- **Dark Mode**: Switch to dark mode for a comfortable viewing experience.
+- **Advanced Features**: Utilize advanced search, sorting, and filtering options to find exactly what you're looking for.
+- **Pagination**: Browse through a large number of movies and TV shows effortlessly.
+- **Secure Authentication**: NextAuth ensures your data is safe and secure.
+
+
+---
+
+## Tech Stack
+
+**Frontend:**
+- ![Next.js](https://img.icons8.com/color/48/000000/nextjs.png) Next.js
+- <img src="https://github.com/user-attachments/assets/55682d1d-6dbc-4f1c-89a7-8e1819c659b6" alt="Tailwind CSS" width="30" height="30"/> Tailwind CSS
+- ![React](https://img.icons8.com/color/48/000000/react-native.png) React
+
+**Authentication:**
+-  <img src="https://github.com/user-attachments/assets/a9a37380-8c35-4f9f-8abc-ff776a4e146f" alt="Tailwind CSS" width="30" height="30"/> NextAuth
+
+---
+
+## Features
+
+- **Beautiful UI**: An attractive and user-friendly interface.
+- **Dark Mode**: Switch between light and dark modes.
+- **Advanced Search**: Search for movies and TV shows with various criteria.
+- **Sort and Filter**: Sort results by popularity, rating, release date, and more. Filter by genre, year, and other attributes.
+- **Pagination**: Easily navigate through pages of content.
+- **Secure Authentication**: User authentication powered by NextAuth.
+
+---
+
+## Image Gallery
+
+![Gallery Image 1](https://github.com/user-attachments/assets/862faab4-dcbc-4cc6-a67f-1b4b3a0bf111)
+
+![Gallery Image 2](https://github.com/user-attachments/assets/0d03958d-48e1-412c-9470-3836a4b781d7)
+
+![Gallery Image 3]![image](https://github.com/user-attachments/assets/e1852356-2c80-49e0-ac5d-be9c626bba3a)
+
+
+![Gallery Image 4](https://github.com/user-attachments/assets/6c2bd268-75fb-4e11-9af8-77f768d24f62)
+
+
+
+---
+
+## Usage
+
+1. Browse and search for movies and TV shows.
+2. Use sorting and filtering options to refine your search.
+3. Enjoy browsing through the catalog in light or dark mode.
+
+---
+
+
+
+
+
+## Contact
+
+For any inquiries or feedback, please contact me at bommachandugoud@gmail.com.
